@@ -126,7 +126,6 @@ main {
   border-radius: 2rem;
   padding: 0 1.6rem;
   height: 3.8rem;
-  /*NÃO TÁ PEGANDO ESSA ALTURA PQ O SPAN É DISPLAY BLOCK, PRA COSERTAR EU POSSO COLOCAR DISPLAY INLINE FLEX*/
   display: flex;
   align-items: center;
   width: fit-content;
@@ -160,11 +159,6 @@ main {
 }
 
 @media (min-width:700px) {
-  /* .page{
-    max-width: 170rem;
-    padding: 0 5rem;
-} TIRAMOS ISSO DAQUI E USAMOS O CLAMP LÁ EM CIMA*/
-
   main {
     grid-template-columns: 1fr 1fr;
   }
