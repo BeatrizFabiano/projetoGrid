@@ -6,26 +6,24 @@
 
 :root {
   font-size: 62.5%;
-  --fs-body:1.6rem;
+  --fs-body: 1.6rem;
   --fs-heading: clamp(4rem, 1rem + 5vw, 5.6rem);
   --fs-heading-sm: clamp(3rem, 0.5rem + 4vw, 4rem);
 
-  --ff-heading:'Epilogue', sans-serif;
-  --ff-texting:'Open sans', sans-serif;
-  
-  --hue:250;
-  --bg-primary:hsl(var(--hue), 22%, 20%);
+  --ff-heading: 'Epilogue', sans-serif;
+  --ff-texting: 'Open sans', sans-serif;
+
+  --hue: 250;
+  --bg-primary: hsl(var(--hue), 22%, 20%);
   --fc-primary: hsl(var(--hue), 0%, 100%);
   --fc-secondary: hsl(var(--hue), 50%, 80%);
-  --fc-secondary-dark:hsl(var(--hue), 100%, 11%);
+  --fc-secondary-dark: hsl(var(--hue), 100%, 11%);
 }
 
 body {
-  /*EU ACHO QUE ISSO AQUI É PRA DEFINIR UM PADRÃO
-   COMO SE FOSSE UMA CAMADA ZERO , Fonte open sans tamaho 16px branco*/
-  font-family: var(--ff-texting); 
+  font-family: var(--ff-texting);
   font-size: var(--fs-body);
-  color:var(--fc-primary) ;
+  color: var(--fc-primary);
 
   background-color: var(--bg-primary);
 }
@@ -34,7 +32,7 @@ body {
   max-width: clamp(33rem, 30rem + 60vw, 170rem);
   padding: 0 5rem;
   margin: 0 auto;
-  
+
 }
 
 img {
@@ -53,44 +51,47 @@ header {
 header p {
   color: var(--fc-secondary);
   text-transform: uppercase;
-  
-  line-height: 3,2rem;;
+
+  line-height: 3, 2rem;
+  ;
   letter-spacing: 3px;
   font-weight: 400;
-  
-  margin-bottom: 1.7rem;;
-  
+
+  margin-bottom: 1.7rem;
+  ;
+
 }
 
 header h1 {
   font-size: var(--fs-heading);
-  line-height: 4.8rem;;
+  line-height: 4.8rem;
+  ;
   font-weight: 800;
-  
+
 }
 
 main {
   display: grid;
-
-  /* grid-template-columns:1fr 2fr 50% 50% 100px 100px; */
-  gap:3.2rem;
+  grid-template-columns: 1fr 2fr 50% 50% 100px 100px;
+  gap: 3.2rem;
   padding-bottom: 10rem;
-  
+
   animation: side 1s 500ms forwards;
+
 }
 
 .card {
   position: relative;
   font-family: var(--ff-heading);
+  cursor: pointer;
 }
 
 .card img {
   height: 41.6rem;
   object-fit: cover;
-  border-radius:10px;
-  
-  transition: all 400ms; /* O ALL NESSA LINHA PERMITE QUE ESSES VALORES DE TRANSITION SEJAM APLICADOS
-  A TODOS AS PROPRIEDADES QUE EU COLOCAR NO MEU .card img:hover{propriedades. ou seja, todas vão ter 400ms de duração}*/
+  border-radius: 10px;
+
+  transition: all 400ms;
   filter: brightness(0.8) saturate(1.8);
 }
 
@@ -103,28 +104,30 @@ main {
 .card h2 {
   position: absolute;
   bottom: 5.2rem;
-  left:2.8rem;
-  
+  left: 2.8rem;
+
   font-size: var(--fs-heading-sm);
   font-weight: 800;
-  
+
   display: flex;
   flex-direction: column;
-  gap: 2.8rem;  
+  gap: 2.8rem;
 
+  cursor: pointer;
 }
 
 .card h2 span {
   font-size: var(--fs-body);
   font-weight: 400;
   color: var(--fc-secondary-dark);
-  
+
   background-color: var(--fc-primary);
-  
+
   border-radius: 2rem;
   padding: 0 1.6rem;
-  height: 3.8rem; /*NÃO TÁ PEGANDO ESSA ALTURA PQ O SPAN É DISPLAY BLOCK, PRA COSERTAR EU POSSO COLOCAR DISPLAY INLINE FLEX*/
-  display:flex;
+  height: 3.8rem;
+  /*NÃO TÁ PEGANDO ESSA ALTURA PQ O SPAN É DISPLAY BLOCK, PRA COSERTAR EU POSSO COLOCAR DISPLAY INLINE FLEX*/
+  display: flex;
   align-items: center;
   width: fit-content;
 }
@@ -133,23 +136,23 @@ main {
 @keyframes topdown {
   0% {
     opacity: 0;
-    transform:translateX(30px);
+    transform: translateX(30px);
   }
 
   100% {
     opacity: 1;
     transform: translateX(0);
-    
+
   }
 }
 
-@keyframes side { 
+@keyframes side {
 
   0% {
     opacity: 0;
     transform: translateX(-30px);
   }
-  
+
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -157,38 +160,38 @@ main {
 }
 
 @media (min-width:700px) {
-   /* .page{
+  /* .page{
     max-width: 170rem;
     padding: 0 5rem;
 } TIRAMOS ISSO DAQUI E USAMOS O CLAMP LÁ EM CIMA*/
 
-main {
-  grid-template-columns: 1fr 1fr;
-}
+  main {
+    grid-template-columns: 1fr 1fr;
+  }
 
 }
 
 @media (min-width:925px) {
-  
-main {
-  grid-template-areas: "A B B" 
-  "C C D";
-}
 
-main div:nth-child(1) {
-  grid-area:A;
-}
+  main {
+    grid-template-areas: "A B B"
+      "C C D";
+  }
 
-main div:nth-child(2) {
-  grid-area:B;
-}
+  main div:nth-child(1) {
+    grid-area: A;
+  }
 
-main div:nth-child(3) {
-  grid-area:C;
-}
+  main div:nth-child(2) {
+    grid-area: B;
+  }
 
-main div:nth-child(4) {
-  grid-area:D;
-}
+  main div:nth-child(3) {
+    grid-area: C;
+  }
+
+  main div:nth-child(4) {
+    grid-area: D;
+  }
 
 }
